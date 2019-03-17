@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- BS4样式网站：http://demo.cssmoban.com/cssthemes4/btzero_14_KrU/index.html -->
+  
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/signin.css" %}">
+    <script type="text/javascript" src="{% static "js/jquery.slim.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/popper.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+
+    <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <!--<link rel="stylesheet" href="https://v3.bootcss.com/examples/signin/signin.css" crossorigin="anonymous">-->
+
+    <meta charset="UTF-8">
+    <title>嘉宾管理系统</title>
+</head>
+<body style="padding-top: 0px;">
+    <div class="bg">
+
+    <div class="container" style="width: 360px; padding-top: 100px;">
+
+      <form class="form-signin" action="/login_action/" method="post">
+        <h2 class="form-signin-heading login-tile">发布会管理系统</h2>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text" id="inputEmail" class="form-control" name="username">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" name="password">
+        <br>
+        <p style="color:red">{{ hint }}</p>
+        <button id="LoginButton" class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+      </form>
+    </div>
+    </div>
+
+    <!--<h1>嘉宾管理系统</h1>-->
+    <!--<form action="/login_action/", method="post">-->
+        <!--账号：<input type="text" name="username"><br>-->
+        <!--密码：<input type="password" name="password"><br>-->
+        <!--<p style="color:red;margin-top: 3px;margin-bottom: 5px;">-->
+            <!--{{ hint }}-->
+        <!--</p> <br>-->
+        <!--<button type="submit" value="submit">登陆</button>-->
+    <!--</form>-->
+
+
+    <!--
+        <button id="loginButton" type="button" value="submit">登陆</button>
+        
+        这是一段前端js 代码，调用后端接口的实现 
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+          $("#loginButton").click(function(){
+            user = document.querySelector("[name='username']").value
+            pawd = document.querySelector("[name='password']").value
+            console.log("用户名：", user);
+            console.log("密码：", pawd);
+
+            $.post("api/login", {
+                username: user,
+                password: pawd
+                },
+                function(result){
+                    console.log("结果：", result);
+                    if(result.success === "false"){
+                       window.alert(result.message); 
+                    }
+                //$("span").html(result);
+              });
+
+          });
+        });
+    </script> -->
+<style>
+  .bg{
+    background:url(/static/img/bg.jpg);
+    height: 600px;
+  }
+  .login-tile{
+    color:cadetblue;
+    text-align: center;
+  }
+
+</style>
+
+</body>
+
+
+</html>
+
+
+web 系统的开发历史
+
+HTML  静态页面
+<a here>name</a>
+<img>
+<input>
+<br>
+
+javascript + html + css 
+
+<html>
+<input id="elems" class="cls"><input>
+<html>
+
+<script>
+document.querySelector("#elsms").value = "hell"
+</script>
+
+<style>
+  .cls {
+    width: 100px;
+    height: 20px;
+    color: aqua;
+    font-size: 14px;
+
+  }
+</style>
+
+前端框架：vue 
+
+HTML5 前端技术越来越复杂
+
+前端与后端分离： 
+
+前端：只专注于写交互界面，应用到多端：android, iOS, web 
+
+接口
+
+后端：只专注于数据的处理，性能
+
+
+如何做出接口？
+
+* webservice 技术(接口)：soap， xml, uddi
+
+* RPC接口 专门的格式 dubbo, grpc, brpc
+
+* HTTP(路线) + json（装箱）***
+
+这个HTTP请求是不是纯接口，重在数据格式上面？
+
+纯的接口：返回的只是数据，而且这些数据不是直接给普通用户的。
+
+THML， CSS, JS  --》不是接口。
+
+HTTP：url , 请求方法：get/post/put/delete
+参数：from-date,json, xml ，csv 文件
+
+
+
+
+
+
+
+
+
+
+
+
